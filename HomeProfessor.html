@@ -1,8 +1,296 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Professor</title>
-  </head>
-  <body></body>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Professor</title>
+</head>
+
+<body></body>
+
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal do Professor</title>
+  <link rel="stylesheet" href="Styles/stylehomeprofessor.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <!-- Logo -->
+      <div class="logo">
+        <div class="logo-icon">
+          <i data-lucide="graduation-cap"></i>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav">
+        <button class="nav-btn active" onclick="setActiveTab(this)">Home</button>
+        <button class="nav-btn" onclick="setActiveTab(this)">Turmas</button>
+        <button class="nav-btn" onclick="setActiveTab(this)">Atividades</button>
+        <button class="nav-btn" onclick="setActiveTab(this)">Avaliações</button>
+        <button class="nav-btn" onclick="setActiveTab(this)">Mensagens</button>
+
+        <!-- Profile Dropdown -->
+        <div class="profile-dropdown">
+          <button class="profile-btn">
+            <span>Professor</span>
+            <i data-lucide="chevron-down"></i>
+          </button>
+        </div>
+      </nav>
+
+      <!-- User Avatar -->
+      <div class="user-avatar">
+        <i data-lucide="user"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <div class="content-grid">
+
+      <!-- Últimas Notificações -->
+      <div class="card-section">
+        <div class="card notifications-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <i data-lucide="bell"></i>
+              Últimas Notificações
+            </h3>
+          </div>
+          <div class="card-content">
+            <div class="notification-item">
+              <p>Bem-vindo ao Portal do Professor!</p>
+            </div>
+            <div class="notification-item">
+              <p>Nova turma 9º A foi atribuída ao seu perfil.</p>
+              <span class="time">Hoje, 08:30</span>
+            </div>
+            <div class="notification-item">
+              <p>Lembrete: Reunião de pais agendada para 15/09.</p>
+              <span class="time">Ontem, 16:45</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Atividades Pendentes -->
+      <div class="card-section">
+        <div class="card activities-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <i data-lucide="clipboard-check"></i>
+              Atividades Pendentes
+            </h3>
+          </div>
+          <div class="card-content">
+            <div class="activity-item">
+              <div class="activity-info">
+                <p class="activity-title">Corrigir provas de Matemática - 9º A</p>
+                <span class="activity-deadline">até 12/09</span>
+              </div>
+              <span class="badge badge-high">alta</span>
+            </div>
+            <div class="activity-item">
+              <div class="activity-info">
+                <p class="activity-title">Planejar aula sobre Meio Ambiente</p>
+                <span class="activity-deadline">até 14/09</span>
+              </div>
+              <span class="badge badge-medium">média</span>
+            </div>
+            <div class="activity-item">
+              <div class="activity-info">
+                <p class="activity-title">Lançar notas do 3º bimestre</p>
+                <span class="activity-deadline">até 18/09</span>
+              </div>
+              <span class="badge badge-high">alta</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mensagens Recentes -->
+      <div class="card-section">
+        <div class="card messages-card">
+          <div class="card-header">
+            <h3 class="card-title">
+              <i data-lucide="message-square"></i>
+              Mensagens Recentes
+            </h3>
+          </div>
+          <div class="card-content">
+            <div class="message-item">
+              <div class="message-avatar">A</div>
+              <div class="message-info">
+                <p class="message-sender">Ana Silva (Responsável)</p>
+                <p class="message-text">Gostaria de agendar uma conversa sobre o desempenho do João.</p>
+                <span class="message-time">10:30</span>
+              </div>
+            </div>
+            <div class="message-item">
+              <div class="message-avatar">P</div>
+              <div class="message-info">
+                <p class="message-sender">Pedro Santos (Aluno)</p>
+                <p class="message-text">Professor, não consegui entregar a atividade ontem.</p>
+                <span class="message-time">09:15</span>
+              </div>
+            </div>
+            <div class="message-item">
+              <div class="message-avatar">D</div>
+              <div class="message-info">
+                <p class="message-sender">Direção Escolar</p>
+                <p class="message-text">Reunião pedagógica reagendada para quinta-feira.</p>
+                <span class="message-time">Ontem</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Eventos e Turmas -->
+    <div class="bottom-grid">
+
+      <!-- Eventos -->
+      <div class="card events-card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <i data-lucide="calendar"></i>
+            Eventos
+          </h3>
+        </div>
+        <div class="card-content">
+          <div class="event-item">
+            <div class="event-info">
+              <p class="event-title">Reunião Pedagógica</p>
+              <span class="event-date">15/09</span>
+            </div>
+            <span class="badge badge-meeting">Reunião</span>
+          </div>
+          <div class="event-item">
+            <div class="event-info">
+              <p class="event-title">Feira de Ciências</p>
+              <span class="event-date">20/09</span>
+            </div>
+            <span class="badge badge-event">Evento</span>
+          </div>
+          <div class="event-item">
+            <div class="event-info">
+              <p class="event-title">Treinamento - Novas Metodologias</p>
+              <span class="event-date">25/09</span>
+            </div>
+            <span class="badge badge-training">Formação</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Minhas Turmas -->
+      <div class="card classes-card">
+        <div class="card-header">
+          <h3 class="card-title">
+            <i data-lucide="users"></i>
+            Minhas Turmas
+          </h3>
+        </div>
+        <div class="card-content">
+          <div class="class-item">
+            <div class="class-info">
+              <p class="class-name">9º Ano A</p>
+              <span class="class-details">28 alunos • Matemática</span>
+            </div>
+            <span class="badge badge-grade">9º</span>
+          </div>
+          <div class="class-item">
+            <div class="class-info">
+              <p class="class-name">8º Ano B</p>
+              <span class="class-details">25 alunos • Matemática</span>
+            </div>
+            <span class="badge badge-grade">8º</span>
+          </div>
+          <div class="class-item">
+            <div class="class-info">
+              <p class="class-name">7º Ano C</p>
+              <span class="class-details">30 alunos • Matemática</span>
+            </div>
+            <span class="badge badge-grade">7º</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Accessibility Button -->
+  <div class="accessibility-btn" onclick="toggleAccessibility()">
+    <i data-lucide="accessibility"></i>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p>© Projeto desenvolvido por [Nossos nomes]</p>
+    </div>
+  </footer>
+
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // Navigation functionality
+    function setActiveTab(button) {
+      // Remove active class from all buttons
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      // Add active class to clicked button
+      button.classList.add('active');
+    }
+
+    // Accessibility toggle
+    function toggleAccessibility() {
+      document.body.classList.toggle('high-contrast');
+
+      // Show notification
+      const notification = document.createElement('div');
+      notification.className = 'accessibility-notification';
+      notification.textContent = 'Modo de acessibilidade ' + (document.body.classList.contains('high-contrast') ? 'ativado' : 'desativado');
+      document.body.appendChild(notification);
+
+      setTimeout(() => {
+        notification.remove();
+      }, 3000);
+    }
+
+    // Add hover effects
+    document.addEventListener('DOMContentLoaded', function () {
+      const cards = document.querySelectorAll('.card');
+      cards.forEach(card => {
+        card.addEventListener('mouseenter', function () {
+          this.style.transform = 'translateY(-2px)';
+          this.style.boxShadow = '0 8px 25px rgba(0, 0, 0, 0.1)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+          this.style.transform = 'translateY(0)';
+          this.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        });
+      });
+    });
+  </script>
+</body>
+
 </html>
