@@ -18,261 +18,188 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal do Professor</title>
   <link rel="stylesheet" href="Styles/stylehomeprofessor.css">
-  <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
 </head>
 
 <body>
-  <!-- Header -->
-  <header class="header">
-    <div class="header-container">
+  <!-- Cabeçalho -->
+  <header class="cabecalho">
+    <div class="container-cabecalho">
       <!-- Logo -->
-      <div class="logo">
-        <div class="logo-icon">
+      <a href="#" class="logo" aria-label="Portal do Professor">
+        <span class="icone-logo">
           <i data-lucide="graduation-cap"></i>
-        </div>
-      </div>
+        </span>
+      </a>
 
-      <!-- Navigation -->
-      <nav class="nav">
-        <button class="nav-btn active" onclick="setActiveTab(this)">Home</button>
-        <button class="nav-btn" onclick="setActiveTab(this)">Turmas</button>
-        <button class="nav-btn" onclick="setActiveTab(this)">Atividades</button>
-        <button class="nav-btn" onclick="setActiveTab(this)">Avaliações</button>
-        <button class="nav-btn" onclick="setActiveTab(this)">Mensagens</button>
+      <!-- Navegação -->
+      <nav class="navegacao" aria-label="Menu Principal">
+        <button class="botao-nav ativo" onclick="definirAbaAtiva(this)">Início</button>
+        <button class="botao-nav" onclick="definirAbaAtiva(this)">Turmas</button>
+        <button class="botao-nav" onclick="definirAbaAtiva(this)">Atividades</button>
+        <button class="botao-nav" onclick="definirAbaAtiva(this)">Avaliações</button>
+        <button class="botao-nav" onclick="definirAbaAtiva(this)">Mensagens</button>
 
-        <!-- Profile Dropdown -->
-        <div class="profile-dropdown">
-          <button class="profile-btn">
-            <span>Professor</span>
-            <i data-lucide="chevron-down"></i>
+        <!-- Dropdown de perfil -->
+        <div class="perfil-dropdown">
+          <button class="botao-perfil" aria-haspopup="true" aria-expanded="false">
+            Professor <i data-lucide="chevron-down"></i>
           </button>
         </div>
       </nav>
 
-      <!-- User Avatar -->
-      <div class="user-avatar">
+      <!-- Avatar -->
+      <aside class="avatar-usuario" aria-label="Avatar do Professor">
         <i data-lucide="user"></i>
-      </div>
+      </aside>
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main class="main-content">
-    <div class="content-grid">
+  <!-- Conteúdo Principal -->
+  <main class="conteudo-principal">
 
-      <!-- Últimas Notificações -->
-      <div class="card-section">
-        <div class="card notifications-card">
-          <div class="card-header">
-            <h3 class="card-title">
-              <i data-lucide="bell"></i>
-              Últimas Notificações
-            </h3>
-          </div>
-          <div class="card-content">
-            <div class="notification-item">
-              <p>Bem-vindo ao Portal do Professor!</p>
-            </div>
-            <div class="notification-item">
-              <p>Nova turma 9º A foi atribuída ao seu perfil.</p>
-              <span class="time">Hoje, 08:30</span>
-            </div>
-            <div class="notification-item">
-              <p>Lembrete: Reunião de pais agendada para 15/09.</p>
-              <span class="time">Ontem, 16:45</span>
-            </div>
-          </div>
+    <!-- Últimas Notificações -->
+    <section class="card notificacoes-card">
+      <header class="cabecalho-card">
+        <h2 class="titulo-card"><i data-lucide="bell"></i> Últimas Notificações</h2>
+      </header>
+      <article class="item-notificacao">
+        <p>Bem-vindo ao Portal do Professor!</p>
+      </article>
+      <article class="item-notificacao">
+        <p>Nova turma 9º A foi atribuída ao seu perfil.</p>
+        <time class="hora" datetime="2025-09-09T08:30">Hoje, 08:30</time>
+      </article>
+      <article class="item-notificacao">
+        <p>Lembrete: Reunião de pais agendada para 15/09.</p>
+        <time class="hora" datetime="2025-09-08T16:45">Ontem, 16:45</time>
+      </article>
+    </section>
+
+    <!-- Atividades Pendentes -->
+    <section class="card atividades-card">
+      <header class="cabecalho-card">
+        <h2 class="titulo-card"><i data-lucide="clipboard-check"></i> Atividades Pendentes</h2>
+      </header>
+      <article class="item-atividade">
+        <p class="titulo-atividade">Corrigir provas de Matemática - 9º A</p>
+        <time class="prazo-atividade" datetime="2025-09-12">até 12/09</time>
+        <span class="badge badge-alta">alta</span>
+      </article>
+      <article class="item-atividade">
+        <p class="titulo-atividade">Planejar aula sobre Meio Ambiente</p>
+        <time class="prazo-atividade" datetime="2025-09-14">até 14/09</time>
+        <span class="badge badge-media">média</span>
+      </article>
+      <article class="item-atividade">
+        <p class="titulo-atividade">Lançar notas do 3º bimestre</p>
+        <time class="prazo-atividade" datetime="2025-09-18">até 18/09</time>
+        <span class="badge badge-alta">alta</span>
+      </article>
+    </section>
+
+    <!-- Mensagens Recentes -->
+    <section class="card mensagens-card">
+      <header class="cabecalho-card">
+        <h2 class="titulo-card"><i data-lucide="message-square"></i> Mensagens Recentes</h2>
+      </header>
+      <article class="item-mensagem">
+        <span class="avatar-mensagem">A</span>
+        <div>
+          <p class="remetente-mensagem">Ana Silva (Responsável)</p>
+          <p class="texto-mensagem">Gostaria de agendar uma conversa sobre o desempenho do João.</p>
+          <time class="hora-mensagem" datetime="2025-09-09T10:30">10:30</time>
         </div>
-      </div>
-
-      <!-- Atividades Pendentes -->
-      <div class="card-section">
-        <div class="card activities-card">
-          <div class="card-header">
-            <h3 class="card-title">
-              <i data-lucide="clipboard-check"></i>
-              Atividades Pendentes
-            </h3>
-          </div>
-          <div class="card-content">
-            <div class="activity-item">
-              <div class="activity-info">
-                <p class="activity-title">Corrigir provas de Matemática - 9º A</p>
-                <span class="activity-deadline">até 12/09</span>
-              </div>
-              <span class="badge badge-high">alta</span>
-            </div>
-            <div class="activity-item">
-              <div class="activity-info">
-                <p class="activity-title">Planejar aula sobre Meio Ambiente</p>
-                <span class="activity-deadline">até 14/09</span>
-              </div>
-              <span class="badge badge-medium">média</span>
-            </div>
-            <div class="activity-item">
-              <div class="activity-info">
-                <p class="activity-title">Lançar notas do 3º bimestre</p>
-                <span class="activity-deadline">até 18/09</span>
-              </div>
-              <span class="badge badge-high">alta</span>
-            </div>
-          </div>
+      </article>
+      <article class="item-mensagem">
+        <span class="avatar-mensagem">P</span>
+        <div>
+          <p class="remetente-mensagem">Pedro Santos (Aluno)</p>
+          <p class="texto-mensagem">Professor, não consegui entregar a atividade ontem.</p>
+          <time class="hora-mensagem" datetime="2025-09-09T09:15">09:15</time>
         </div>
-      </div>
-
-      <!-- Mensagens Recentes -->
-      <div class="card-section">
-        <div class="card messages-card">
-          <div class="card-header">
-            <h3 class="card-title">
-              <i data-lucide="message-square"></i>
-              Mensagens Recentes
-            </h3>
-          </div>
-          <div class="card-content">
-            <div class="message-item">
-              <div class="message-avatar">A</div>
-              <div class="message-info">
-                <p class="message-sender">Ana Silva (Responsável)</p>
-                <p class="message-text">Gostaria de agendar uma conversa sobre o desempenho do João.</p>
-                <span class="message-time">10:30</span>
-              </div>
-            </div>
-            <div class="message-item">
-              <div class="message-avatar">P</div>
-              <div class="message-info">
-                <p class="message-sender">Pedro Santos (Aluno)</p>
-                <p class="message-text">Professor, não consegui entregar a atividade ontem.</p>
-                <span class="message-time">09:15</span>
-              </div>
-            </div>
-            <div class="message-item">
-              <div class="message-avatar">D</div>
-              <div class="message-info">
-                <p class="message-sender">Direção Escolar</p>
-                <p class="message-text">Reunião pedagógica reagendada para quinta-feira.</p>
-                <span class="message-time">Ontem</span>
-              </div>
-            </div>
-          </div>
+      </article>
+      <article class="item-mensagem">
+        <span class="avatar-mensagem">D</span>
+        <div>
+          <p class="remetente-mensagem">Direção Escolar</p>
+          <p class="texto-mensagem">Reunião pedagógica reagendada para quinta-feira.</p>
+          <time class="hora-mensagem" datetime="2025-09-08">Ontem</time>
         </div>
-      </div>
+      </article>
+    </section>
 
-    </div>
+    <!-- Eventos -->
+    <section class="card eventos-card">
+      <header class="cabecalho-card">
+        <h2 class="titulo-card"><i data-lucide="calendar"></i> Eventos</h2>
+      </header>
+      <article class="item-evento">
+        <p class="titulo-evento">Reunião Pedagógica</p>
+        <time class="data-evento" datetime="2025-09-15">15/09</time>
+        <span class="badge badge-reuniao">Reunião</span>
+      </article>
+      <article class="item-evento">
+        <p class="titulo-evento">Feira de Ciências</p>
+        <time class="data-evento" datetime="2025-09-20">20/09</time>
+        <span class="badge badge-evento">Evento</span>
+      </article>
+      <article class="item-evento">
+        <p class="titulo-evento">Treinamento - Novas Metodologias</p>
+        <time class="data-evento" datetime="2025-09-25">25/09</time>
+        <span class="badge badge-formacao">Formação</span>
+      </article>
+    </section>
 
-    <!-- Eventos e Turmas -->
-    <div class="bottom-grid">
-
-      <!-- Eventos -->
-      <div class="card events-card">
-        <div class="card-header">
-          <h3 class="card-title">
-            <i data-lucide="calendar"></i>
-            Eventos
-          </h3>
-        </div>
-        <div class="card-content">
-          <div class="event-item">
-            <div class="event-info">
-              <p class="event-title">Reunião Pedagógica</p>
-              <span class="event-date">15/09</span>
-            </div>
-            <span class="badge badge-meeting">Reunião</span>
-          </div>
-          <div class="event-item">
-            <div class="event-info">
-              <p class="event-title">Feira de Ciências</p>
-              <span class="event-date">20/09</span>
-            </div>
-            <span class="badge badge-event">Evento</span>
-          </div>
-          <div class="event-item">
-            <div class="event-info">
-              <p class="event-title">Treinamento - Novas Metodologias</p>
-              <span class="event-date">25/09</span>
-            </div>
-            <span class="badge badge-training">Formação</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Minhas Turmas -->
-      <div class="card classes-card">
-        <div class="card-header">
-          <h3 class="card-title">
-            <i data-lucide="users"></i>
-            Minhas Turmas
-          </h3>
-        </div>
-        <div class="card-content">
-          <div class="class-item">
-            <div class="class-info">
-              <p class="class-name">9º Ano A</p>
-              <span class="class-details">28 alunos • Matemática</span>
-            </div>
-            <span class="badge badge-grade">9º</span>
-          </div>
-          <div class="class-item">
-            <div class="class-info">
-              <p class="class-name">8º Ano B</p>
-              <span class="class-details">25 alunos • Matemática</span>
-            </div>
-            <span class="badge badge-grade">8º</span>
-          </div>
-          <div class="class-item">
-            <div class="class-info">
-              <p class="class-name">7º Ano C</p>
-              <span class="class-details">30 alunos • Matemática</span>
-            </div>
-            <span class="badge badge-grade">7º</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <!-- Minhas Turmas -->
+    <section class="card turmas-card">
+      <header class="cabecalho-card">
+        <h2 class="titulo-card"><i data-lucide="users"></i> Minhas Turmas</h2>
+      </header>
+      <article class="item-turma">
+        <p class="nome-turma">9º Ano A</p>
+        <span class="detalhes-turma">28 alunos • Matemática</span>
+        <span class="badge badge-ano">9º</span>
+      </article>
+      <article class="item-turma">
+        <p class="nome-turma">8º Ano B</p>
+        <span class="detalhes-turma">25 alunos • Matemática</span>
+        <span class="badge badge-ano">8º</span>
+      </article>
+      <article class="item-turma">
+        <p class="nome-turma">7º Ano C</p>
+        <span class="detalhes-turma">30 alunos • Matemática</span>
+        <span class="badge badge-ano">7º</span>
+      </article>
+    </section>
   </main>
 
-  <!-- Accessibility Button -->
-  <div class="accessibility-btn" onclick="toggleAccessibility()">
+  <!-- Botão Acessibilidade -->
+  <button class="botao-acessibilidade" onclick="alternarAcessibilidade()" aria-label="Ativar modo de alto contraste">
     <i data-lucide="accessibility"></i>
-  </div>
+  </button>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="footer-container">
-      <p>© Projeto desenvolvido por [Nossos nomes]</p>
-    </div>
+  <!-- Rodapé -->
+  <footer class="rodape">
+    <p>© Projeto desenvolvido por [Seu Nome]</p>
   </footer>
 
   <script>
     // Initialize Lucide icons
     lucide.createIcons();
 
-    // Navigation functionality
-    function setActiveTab(button) {
-      // Remove active class from all buttons
-      document.querySelectorAll('.nav-btn').forEach(btn => {
-        btn.classList.remove('active');
-      });
-
-      // Add active class to clicked button
-      button.classList.add('active');
+    function definirAbaAtiva(botao) {
+      document.querySelectorAll('.botao-nav').forEach(b => b.classList.remove('ativo'));
+      botao.classList.add('ativo');
     }
 
-    // Accessibility toggle
-    function toggleAccessibility() {
-      document.body.classList.toggle('high-contrast');
-
-      // Show notification
-      const notification = document.createElement('div');
-      notification.className = 'accessibility-notification';
-      notification.textContent = 'Modo de acessibilidade ' + (document.body.classList.contains('high-contrast') ? 'ativado' : 'desativado');
-      document.body.appendChild(notification);
-
-      setTimeout(() => {
-        notification.remove();
-      }, 3000);
+    function alternarAcessibilidade() {
+      document.body.classList.toggle('alto-contraste');
+      const noti = document.createElement('div');
+      noti.className = 'notificacao-acessibilidade';
+      noti.textContent = 'Modo de acessibilidade ' + (document.body.classList.contains('alto-contraste') ? 'ativado' : 'desativado');
+      document.body.appendChild(noti);
+      setTimeout(() => noti.remove(), 3000);
     }
 
     // Add hover effects

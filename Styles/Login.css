@@ -1,22 +1,23 @@
 :root {
-  --primary-blue: #1a4e9b;
-  --primary-blue-dark: #163f7a;
-  --background: #f5f6fa;
-  --input-border: #ccc;
-  --text-color: #333;
-  --footer-text: #fff;
+  --azul-principal: #1a4e9b;
+  --azul-escuro: #163f7a;
+  --fundo: #f5f6fa;
+  --borda-input: #ccc;
+  --texto: #333;
+  --texto-rodape: #fff;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background-color: var(--background);
+  background-color: var(--fundo);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
 }
 
-.login-container {
+/* Container principal */
+main.container-login {
   flex: 1;
   display: flex;
   justify-content: center;
@@ -24,7 +25,8 @@ body {
   width: 100%;
 }
 
-.login-box {
+/* Caixa do login */
+section.caixa-login {
   background: #fff;
   padding: 40px;
   border-radius: 12px;
@@ -38,63 +40,110 @@ body {
   margin-bottom: 20px;
 }
 
+/* Alternância aluno/professor */
+nav.botoes-tipo {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+nav.botoes-tipo button {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--azul-principal);
+  border-radius: 6px;
+  background-color: #fff;
+  color: var(--azul-principal);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+nav.botoes-tipo button.ativo,
+nav.botoes-tipo button:hover {
+  background-color: var(--azul-principal);
+  color: #fff;
+}
+
+/* Formulário */
 form {
   display: flex;
   flex-direction: column;
   text-align: left;
+  gap: 10px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+legend {
+  display: none;
 }
 
 label {
-  margin: 10px 0 5px;
+  margin: 5px 0 2px;
   font-size: 14px;
-  color: var(--text-color);
+  color: var(--texto);
 }
 
 input {
   padding: 10px;
-  border: 1px solid var(--input-border);
+  border: 1px solid var(--borda-input);
   border-radius: 6px;
-  margin-bottom: 15px;
   font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-button {
+/* Botão Acessar */
+button[type="submit"] {
   padding: 12px;
   border: none;
   border-radius: 6px;
-  background-color: var(--primary-blue);
+  background-color: var(--azul-principal);
   color: #fff;
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s;
+  margin-top: 10px;
+  width: 100%;
 }
 
-button:hover {
-  background-color: var(--primary-blue-dark);
+button[type="submit"]:hover {
+  background-color: var(--azul-escuro);
 }
 
-.extra-links {
+/* Links extras */
+aside.links-extras {
   margin-top: 15px;
 }
 
-.extra-links a {
+aside.links-extras a {
   font-size: 14px;
-  color: var(--primary-blue);
+  color: var(--azul-principal);
   text-decoration: none;
 }
 
-.extra-links a:hover {
+aside.links-extras a:hover {
   text-decoration: underline;
 }
 
+/* Rodapé */
 footer {
-  background-color: var(--primary-blue-dark);
+  background-color: var(--azul-escuro);
   padding: 20px;
   text-align: center;
   margin-top: auto;
 }
 
-.footer-text {
+.texto-rodape {
   font-size: 12px;
-  color: var(--footer-text);
+  color: var(--texto-rodape);
 }
+
